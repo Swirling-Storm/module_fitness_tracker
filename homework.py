@@ -143,7 +143,7 @@ def read_package(workout_type: str, data: List[int]) -> Training:
 def main(training: Training) -> None:
     """Главная функция."""
     info = training.show_training_info()
-    return print(info.get_message())
+    print(info.get_message())
 
 
 if __name__ == '__main__':
