@@ -48,7 +48,6 @@ class Training:
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
         raise NotImplementedError
-        pass
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -138,7 +137,7 @@ def read_package(workout_type: str, data: List[int]) -> Training:
     }
     if workout_type in types:
         return types[workout_type](*data)
-    return print('<Некорректный запрос>')
+    raise ValueError('Неизвестный запрос')
 
 
 def main(training: Training) -> None:
